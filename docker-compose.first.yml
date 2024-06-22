@@ -1,0 +1,15 @@
+services:
+  first:
+    container_name: first_app
+    build:
+      context: ./
+      dockerfile: ./Dockerfile
+    environment:
+      SEND_TO_HOST: second_app
+      MY_NAME: 'first app'
+    networks:
+      sunshine_net:
+
+networks:
+  sunshine_net:
+    name: sunshine_net
